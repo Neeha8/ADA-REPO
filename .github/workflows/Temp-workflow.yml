@@ -28,7 +28,7 @@ jobs:
         run: |
           npm install -g pa11y-ci
           npm install -g concurrently
-          nnpm run test -- --configuration production
+          npm run test -- --configuration production
           concurrently "npm start & npx wait-on http://localhost:4200" "sleep 20 && sh pa11y.sh"
         
       - name: Upload test report
