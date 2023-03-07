@@ -38,6 +38,19 @@ import { RecipeService } from './recipes/recipe.service';
     ReactiveFormsModule,
     AppRoutingModule
   ],
+  exports: [
+    AppComponent,
+    HeaderComponent,
+    RecipesComponent,
+    RecipeListComponent,
+    RecipeDetailComponent,
+    RecipeItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent,
+    DropdownDirective,
+    RecipeStartComponent,
+    RecipeEditComponent
+  ],
   providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })

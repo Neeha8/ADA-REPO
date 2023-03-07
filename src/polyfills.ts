@@ -47,8 +47,7 @@
  */
 import 'zone.js';  // Included with Angular CLI.
 
-
-
+import './global-variables.js'
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */

@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --watch=false --browsers=ChromeHeadless",
     "build:prod": "ng build --configuration production --base-href https://\"Neeha8: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\"@github.com/Neeha8/ADA-REPO.git",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --browsers google-chrome",
     "lint": "ng lint",
@@ -54,6 +54,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "karma-phantomjs-launcher": "^1.0.4",
+    "puppeteer": "^19.7.3",
     "typescript": "~4.7.2"
   }
 }
