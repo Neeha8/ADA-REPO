@@ -7,7 +7,7 @@
     "build:prod": "ng build --configuration production --base-href https://\"Neeha8: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\"@github.com/Neeha8/ADA-REPO.git",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --watch=false",
+    "test": "ng test --browsers Chrome",
     "lint": "ng lint",
     "accessibility": "pa11y-ci --config .pa11y-ci.json",
     "start-dev": "concurrently \"npm start\" \"sleep 20 && sh pa11y.sh\""
