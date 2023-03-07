@@ -34,7 +34,7 @@ jobs:
           npm install -g pa11y-ci
           npm install -g concurrently
           chromedriver --url-base=/wd/hub &
-          concurrently "npm start & npx wait-on http://localhost:port" "sleep 20 && sh pa11y.sh"
+          concurrently "npm start --browser headless-chrome & npx wait-on http://localhost:port --browser headless-chrome" "sleep 20 && sh pa11y.sh"
         
       - name: Upload test report
         if: failure() && steps.run-ada-tests.outcome == 'failure'
