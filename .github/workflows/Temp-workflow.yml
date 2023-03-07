@@ -26,6 +26,7 @@ jobs:
       - name: Test Accessibility
         id: run-ada-tests
         run: |
+          npm install -g pa11y-ci
           npm install -g concurrently
           concurrently "npm start" "sleep 20 && sh pa11y.sh"
         
