@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:prod": "ng build --configuration production --base-href https://\"Neeha8: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\"@github.com/Neeha8/ADA-REPO.git",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false",
     "lint": "ng lint",
