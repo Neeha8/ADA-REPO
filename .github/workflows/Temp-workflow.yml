@@ -28,7 +28,7 @@ jobs:
         run: |
           npm install -g pa11y-ci
           npm install -g concurrently
-          concurrently "npm start" "sleep 20 && sh pa11y.sh"
+          concurrently "npm start & npx wait-on http://localhost:4200" "sleep 20 && sh pa11y.sh"
         
       - name: Upload test report
         if: failure() && steps.run-ada-tests.outcome == 'failure'
