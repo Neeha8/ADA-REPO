@@ -28,12 +28,12 @@ jobs:
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
           sudo apt install ./google-chrome-stable_current_amd64.deb
       - uses: nanasess/setup-chromedriver@v1
-      - run: chromedriver --url-base=/wd/hub &amp;
       - name: Test Accessibility
         id: run-ada-tests
         run: |
           npm install -g pa11y-ci
           npm install -g concurrently
+          chromedriver --url-base=/wd/hub &
           concurrently "npm start & npx wait-on http://localhost:4200" "sleep 20 && sh pa11y.sh"
         
       - name: Upload test report
