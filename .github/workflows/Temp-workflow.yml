@@ -30,6 +30,7 @@ jobs:
           npm install --save intl
           npm install -g pa11y-ci
           npm install -g concurrently
+          export DISPLAY=$HOST_IP:10.0 && chromium
           npm run test
           concurrently "npm start & npx wait-on http://localhost:4200" "sleep 20 && sh pa11y.sh"
         
