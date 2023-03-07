@@ -28,6 +28,8 @@ jobs:
         run: |
           npm i -D puppeteer karma-chrome-launcher
           npm run test-headless
+          npm install -g pa11y-ci
+          npm install -g concurrently
           concurrently "npm start & npx wait-on http://localhost:4200" "sleep 20 && sh pa11y.sh"
         
       - name: Upload test report
