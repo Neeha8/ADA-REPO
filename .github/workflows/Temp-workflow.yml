@@ -26,11 +26,20 @@ jobs:
       - name: Test Accessibility
         id: run-ada-tests
         run: |
+          sudo apt-get update
+          sudo apt-get install -y curl unzip xvfb libxi6 libgconf-2-4
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install ./google-chrome-stable_current_amd64.deb
+          wget https://chromedriver.storage.googleapis.com/86.0.4240.22/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/bin/chromedriver
+          sudo chown root:root /usr/bin/chromedriver
+          sudo chmod +x /usr/bin/chromedriver
+          export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
           npm install --save-dev karma-phantomjs-launcher
           npm install --save intl
           npm install -g pa11y-ci
           npm install -g concurrently
-          export DISPLAY=$HOST_IP:10.0 && chromium
           npm run test
           concurrently "npm start & npx wait-on http://localhost:4200" "sleep 20 && sh pa11y.sh"
         
